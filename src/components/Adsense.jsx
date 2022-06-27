@@ -1,15 +1,17 @@
 import React from 'react';
-import AdSense from 'react-adsense';
 
-const Adsense = () => {
-    return(
-        <div>
-            <AdSense.Google 
-                client='ca-pub-5577466732553898'
-                slot='7571910599'
-            />
-        </div>
-    )
+export default class Adsense extends React.Component {
+  componentDidMount () {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }
+
+render () {
+    return (
+        <ins className='adsbygoogle'
+          style={{ display: 'block' }}
+          data-ad-client='ca-pub-5577466732553898'
+          data-ad-slot='7773986920'
+          data-ad-format='auto' />
+    );
+  }
 }
-
-export default Adsense;

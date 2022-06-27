@@ -1,3 +1,6 @@
+import React, { useEffect } from 'react';
+import Adsense from './Adsense';
+
 const Home = () => {
     return(
         <div>
@@ -5,7 +8,7 @@ const Home = () => {
               (งツ)ว 
               {console.log('po')}
             </header>
-            {console.log('home')}
+            <Adsense />
         </div>
     )
 
