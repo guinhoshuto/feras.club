@@ -7,8 +7,6 @@ const Adsense = () => {
             <AdSense.Google 
                 client='ca-pub-5577466732553898'
                 slot='7571910599'
-                format='auto'
-                responsive='true'
             />
         </div>
     )
