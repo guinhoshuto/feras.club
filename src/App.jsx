@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Dash from './components/Dash';
@@ -11,6 +11,7 @@ const App = () => {
         <Router>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/dash/:channel" element={<Dash />} />
               <Route path="/dash" element={<Dash />} />
               <Route path="/adsense" element={<Adsense />} />
             </Routes>

@@ -1,13 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Adsense from './Adsense';
 
 const Home = () => {
     return(
-        <div>
-            <header className="App-header">
+        <div className="team">
+            <nav className="team-header">
+                <div className="twitch-icon"></div>
+                <ul>
+                    <li><a href="https://www.twitch.tv/directory/following">Following</a></li>
+                    <li><a href="https://www.twitch.tv/directory">Browse</a></li>
+                </ul>
               (งツ)ว 
-              {console.log('po')}
-            </header>
+            </nav>
+            <div className="team-box">
+            </div> 
+
             <Adsense />
         </div>
     )

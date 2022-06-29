@@ -28,6 +28,40 @@
   color: #61dafb;
 }
 
+.team{ 
+  background-color: #0e0e10;
+  min-height: 100vh;
+}
+
+.team-header{
+  background: rgb(24, 24, 27);
+  height: 50px;
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+.twitch-icon{
+  background: rgb(24, 24, 27) url("./twitch.png") no-repeat center; 
+  background-size: contain ;
+  height: 40px;
+  width:40px;
+}
+
+nav>ul>li{
+  display: inline-block;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.team-box{
+  background-color: rgb(38, 38, 44);
+  
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
