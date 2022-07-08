@@ -29,8 +29,8 @@ const Home = () => {
                 </div>
             </nav>
                 (งツ)ว 
-            <div className="team-box mx-auto container flex flex-wrap">
-                <div>
+            <div className="team-box mx-auto container flex flex-wrap p-20">
+                <div className="bg-fundo">
                     <ul>
                         {feras.map((fera) => {
                             return(
