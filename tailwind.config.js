@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         'fundo': '#18181b',
-        'cinzinha': 'rgb(173, 173, 184)'
+        'cinzinha': 'rgb(173, 173, 184)',
+        'hover-cinzinha': '#464649'
       },
       spacing: {
         '20px': '20px'

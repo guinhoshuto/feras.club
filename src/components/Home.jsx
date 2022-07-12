@@ -14,16 +14,29 @@ const Home = () => {
         getFerasOnline()
     }, [])
 
+    feras.sort((a, b) => {
+        if(a.viewer_count > b.viewer_count){
+            return -1;
+        }
+        if(a.viewer_count < b.viewer_count){
+            return 1;
+        }
+        return 0;
+    })
+
 
     return(
         <div className="team">
             <Header />
                 (งツ)ว 
-            <div className="team-box mx-auto container flex flex-wrap p-20px">
-                <Feras feras={feras} />
-            </div> 
-            <div>
-                <Preview />
+            <div className="flex w-1/2 mx-auto mt-4">
+                <div className="team-box mx-auto container flex flex-wrap p-20px">
+                    <Feras feras={feras} />
+                </div> 
+                <div>
+                    <Preview streamer={'marcellus_v'}/>
+                </div>
+
             </div>
         </div>
     )
