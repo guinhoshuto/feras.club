@@ -6,7 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'fundo': '#18181b'
+        'fundo': '#18181b',
+        'cinzinha': 'rgb(173, 173, 184)'
+      },
+      spacing: {
+        '20px': '20px'
+      },
+      height: {
+        '50px': '50px'
       }
     },
   },
