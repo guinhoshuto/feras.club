@@ -1,9 +1,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './components/Home';
-import Dash from './components/Dash';
-import Adsense from './components/Adsense';
+import { Home, Dash, Gabinete } from './components'
 
 const App = () => {
     return(
@@ -13,7 +11,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/dash/:channel" element={<Dash />} />
               <Route path="/dash" element={<Dash />} />
-              <Route path="/adsense" element={<Adsense />} />
+              <Route path="/gabinete" element={<Gabinete />} />
             </Routes>
         </Router>
       </div>

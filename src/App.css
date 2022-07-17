@@ -72,7 +72,25 @@ a{
 
 .team-box{
   background-color: rgb(38, 38, 44);
-  
+}
+
+.fera-fotinha-preview{
+  height: 40px;
+  width: 40px;
+}
+
+.preview{
+  height: 517px
+}
+
+.text-red>svg{
+  fill: red;
+}
+
+svg{
+  height: 15px;
+  width: 15px;
+  fill: rgb(173, 173, 184);
 }
 
 @keyframes App-logo-spin {

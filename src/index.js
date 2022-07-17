@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import TagManager from 'react-gtm-module'
+import { FeraPreviewProvider } from './providers/FeraPreview';
 const tagManagerArgs = {
 	gtmId: 'GTM-KVFW2H8'
 }
@@ -14,7 +15,9 @@ TagManager.initialize(tagManagerArgs)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <FeraPreviewProvider>
+      <App />
+    </FeraPreviewProvider>
   </React.StrictMode>
 );
 
