@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Feras, Header, Preview } from './Team';
 import { useFera } from '../providers/FeraPreview';
 
-const Home = () => {
+export default function Home(){
     const [feras, setFeras] = useState([]);
     const { setFera } = useFera();
 
@@ -11,7 +11,8 @@ const Home = () => {
         axios.get("https://feras-leaderboards.herokuapp.com/team")
         .then(ferasOnline => {
             setFeras(ferasOnline.data.response); 
-            setFera(feras[0]);
+            console.log('o: ', feras[0])
+            // setFera(feras[0])
         })
         .catch((e) => console.log('e: ', e))
     } 
@@ -38,12 +39,10 @@ const Home = () => {
                     <Feras feras={feras} />
                 </div> 
                 <div className="basis-2/3 pr-4 py-4">
-                    <Preview />
+                    <Preview feras={feras} />
                 </div>
             </div>
         </div>
     );
 
 }
-
-export default Home;
