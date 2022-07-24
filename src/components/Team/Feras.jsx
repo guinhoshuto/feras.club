@@ -1,19 +1,20 @@
 import { useFera } from '../../providers/FeraPreview';
 
-export default function Feras({feras}){
+export default function Feras(){
+    const {feras, setFeras} = useFera();
     const online = feras.filter(f => f.is_live)
-    const {fera, setFera} = useFera();
-    console.log(fera)
 
     function handleFera(fera){
-        if(fera.is_live){
-            setFera(fera);
-            console.log(fera)
-        } else {
-            setFera(fera);
-            console.log(fera)
-            // window.location.replace(`https://twitch.com/${fera.fera}`)
-        }
+        feras.forEach(f => {
+            if(f.fera === fera.fera){
+                f.preview = true
+            } else {
+                f.preview = false
+            }
+        })
+        setFeras(feras)
+
+        console.log(fera)
     }
     return(
         <aside className="w-full">

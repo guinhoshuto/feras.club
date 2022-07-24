@@ -1,9 +1,7 @@
-import Dash from './Dash';
-import Gabinete from './Gabinete';
+import GabineteGuz from './GabineteGuz';
 import Home from './Home'
 
 export {
-    Dash, 
-    Gabinete,
+    GabineteGuz,
     Home
 }

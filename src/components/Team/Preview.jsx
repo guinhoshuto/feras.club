@@ -1,14 +1,34 @@
-import { useEffect } from "react"
+// import { useEffect } from "react"
 import { useFera } from "../../providers/FeraPreview";
+import { useEffect } from 'react'
 
-export default function Preview({feras}){
-    const {fera, setFera} = useFera();
-    // const { fera } = useContext( FeraPreviewContext)
+export default function Preview(){
+    const { feras } = useFera();
+    const preview = []
+
+    preview.push(feras.find(f => f.preview))
+    console.log(preview)
+    if(preview.length === 0){
+        preview.push({
+            fera: "marcellus_v",
+            game_name: "",
+            is_live: false,
+            profile_image_url: "https://static-cdn.jtvnw.net/jtv_user_pictures/6356c984-9dd2-42db-bc16-c34ed4244500-profile_image-300x300.png",
+            title: "",
+            user_name: "Marcellus_V",
+            view_count: 13237,
+            viewer_count: "0",
+            preview: true
+        })
+    } 
+
+    const fera = preview[0]
     
 
-    // useEffect(() => {
-    //     setFera(feras[0])
-    // }, );
+    useEffect(() => {
+        console.log( 'preview', feras)
+        // setFera(feras[0])
+    }, );
     return(
         <div>
             <div className="bg-fundo preview">
@@ -50,7 +70,7 @@ export default function Preview({feras}){
                     src={`https://player.twitch.tv/?channel=${fera.fera}&parent=localhost&parent=feras.club`}
                     height="65%"
                     width="100%"
-                    allowfullscreen>
+                    allowFullScreen>
                 </iframe>
                 <div className="p-4">
                     <div className="flex">
