@@ -1,20 +1,13 @@
 import { useFera } from '../../providers/FeraPreview';
 
-export default function Feras(){
-    const {feras, setFeras} = useFera();
+export default function Feras({feras}){
+    const { setFera } = useFera();
     const online = feras.filter(f => f.is_live)
 
     function handleFera(fera){
-        feras.forEach(f => {
-            if(f.fera === fera.fera){
-                f.preview = true
-            } else {
-                f.preview = false
-            }
-        })
-        setFeras(feras)
+        setFera(fera);
 
-        console.log(fera)
+        console.log(feras)
     }
     return(
         <aside className="w-full">
@@ -22,7 +15,7 @@ export default function Feras(){
                 <div> <h2 className="text-white font-bold">Team Members</h2> </div>
                 <div className="text-cinzinha count"> {online.length} </div>
             </div>
-            <div className="bg-fundo">
+            <div className="bg-fundo overflow-y-auto h-full">
                 <ul>
                     {feras.map((fera) => {
                         return(

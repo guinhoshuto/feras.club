@@ -1,17 +1,19 @@
 import { Feras, Header, Preview } from './Team';
 import axios from  'axios';
-import { useEffect} from  'react';
+import { useEffect, useState} from  'react';
 import { useFera } from '../providers/FeraPreview';
 
 export default function Home(){
-    const {feras, setFeras} = useFera();
+    const [feras, setFeras] = useState([]);
+    const {fera, setFera} = useFera();
+
 
     function getFerasOnline(){
         axios.get("https://feras-leaderboards.herokuapp.com/team")
         .then(ferasStreamers => {
             const streamers = ferasStreamers.data.response;
             streamers.forEach(s => {
-                s.preview = false
+                s.preview = true
             });
             streamers.sort((a, b) => {
                 if(a.viewer_count > b.viewer_count)
@@ -21,6 +23,7 @@ export default function Home(){
                 return 0;
             });
             setFeras(streamers)
+            setFera(streamers[0])
         })
         .catch((e) =>  console.log('e: ', e))
     } 
@@ -28,7 +31,7 @@ export default function Home(){
     useEffect(() => {
        getFerasOnline() 
        console.log(feras)
-    }, [feras])
+    }, [])
     // console.log(feras)
     // const preview = feras.filter(f => f.preview)
 
@@ -44,7 +47,7 @@ export default function Home(){
                     <Feras feras={feras} />
                 </div> 
                 <div className="basis-2/3 pr-4 py-4">
-                    <Preview />
+                    <Preview fera={fera}/>
                 </div>
             </div>
         </div>

@@ -3,10 +3,10 @@ import { createContext, useState, useContext } from 'react'
 export const FeraPreviewContext = createContext({});
 
 export const FeraPreviewProvider = (props) => {
-    const [feras, setFeras] = useState([]);
+    const [fera, setFera] = useState([]);
 
     return(
-        <FeraPreviewContext.Provider value={{feras, setFeras}}>
+        <FeraPreviewContext.Provider value={{fera, setFera}}>
             { props.children }
         </FeraPreviewContext.Provider>
     )
