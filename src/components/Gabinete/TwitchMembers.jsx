@@ -31,25 +31,27 @@ export default function TwitchMembers(){
     }
 
     return(
-        <div className="w-64 mx-auto">
-            <div>
-                {activeMembers.map(member => 
-                <TwitchMember 
-                member={member} 
-                onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
-                onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
-                )}
-            </div>
-            <div className="mt-4">
-                <input className="rounded w-full" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
-                {filteredMembers.map( member =>  
+        <div className="h-screen">
+            <div className="w-64 mx-auto">
+                <div>
+                    {activeMembers.map(member => 
                     <TwitchMember 
                     member={member} 
                     onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
                     onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
-                )}
+                    )}
+                </div>
+                <div className="mt-4 overflow-y-auto h-80">
+                    <h3 className="text-white text-center">Busca</h3>
+                    <input className="rounded w-full p-2" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
+                    {filteredMembers.map( member =>  
+                        <TwitchMember 
+                        member={member} 
+                        onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
+                        onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
+                    )}
+                </div>
             </div>
-
         </div>
     );
 }

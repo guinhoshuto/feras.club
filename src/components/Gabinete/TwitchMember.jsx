@@ -1,7 +1,7 @@
 export default function TwitchMember({member, onHandleAddKappa, onHandleRemoveKappa}){
     return(
         <div>
-            <li className="flex justify-between sm:w-full md:w-64 bg-neutral-700 border border-neutral-800 m-auto mt-1 align-middle p-2 rounded">
+            <li className="flex justify-between sm:w-full md:w-64 bg-neutral-700 hover:bg-neutral-700/50 border border-neutral-800 m-auto mt-1 align-middle p-2 rounded">
                 <div className="text-white">
                     {member.username} | {member.kappa}
                 </div>
