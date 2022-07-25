@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 export default function TwitchMembers(){
     const [members, setMembers] = useState([]);
+    const [search, setSearch] = useState('');
+
     useEffect(() => {
         handleUpdateList()
     }, [])
@@ -11,11 +13,13 @@ export default function TwitchMembers(){
     function handleUpdateList(){
         axios.get('http://feras-leaderboards.herokuapp.com/guzclap/twitch/members')
         .then(response => {
-            const activeMembers = response.data.filter(m => m.kappa+m.first > 0)
-            setMembers(activeMembers);
+            setMembers(response.data);
         })
         .catch(e => console.log('e:', e))
     }
+
+    const activeMembers = members.filter(m => m.kappa+m.first > 0)
+    const filteredMembers = members.filter(m => m.username.includes(search) & m.kappa+m.first === 0)
 
     function handleKappa(method, att, member, n){
         if(method === 'add')
@@ -27,12 +31,25 @@ export default function TwitchMembers(){
     }
 
     return(
-        <div>
-            {members.map(member => <TwitchMember 
-            member={member} 
-            onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
-            onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
-            )}
+        <div className="w-64 mx-auto">
+            <div>
+                {activeMembers.map(member => 
+                <TwitchMember 
+                member={member} 
+                onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
+                onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
+                )}
+            </div>
+            <div className="mt-4">
+                <input className="rounded w-full" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
+                {filteredMembers.map( member =>  
+                    <TwitchMember 
+                    member={member} 
+                    onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
+                    onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
+                )}
+            </div>
+
         </div>
     );
 }

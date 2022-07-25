@@ -23,7 +23,7 @@ export default function Dash(){
     }
     
     return(
-        <div className="bg-zinc-900 h-screen p-4">
+        <div className="bg-zinc-900 h-full p-4">
             <TwitchMembers />
             {console.log(users)}
         </div>
