@@ -31,25 +31,49 @@ export default function TwitchMembers(){
     }
 
     return(
-        <div className="h-screen">
-            <div className="w-64 mx-auto">
-                <div>
+        <div className="h-screen md:w-1/2 mx-auto">
+            <div className="w-full mx-auto">
+                <table className="w-full">
+                    <tr className="text-white"> 
+                        <td>Username</td>
+                        <td>Kappa</td>
+                        <td></td>
+                        <td>Kappa Mês</td>
+                        <td></td>
+                        <td>First</td>
+                        <td></td>
+                        <td>Dívida Ju</td>
+                        <td></td>
+                    </tr>
                     {activeMembers.map(member => 
-                    <TwitchMember 
-                    member={member} 
-                    onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
-                    onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
+                        <TwitchMember 
+                        member={member} 
+                        onHandleAddKappa={(att, m, n) => handleKappa('add', att, m, n)} 
+                        />
                     )}
-                </div>
+                </table>
                 <div className="mt-4 overflow-y-auto h-80">
                     <h3 className="text-white text-center">Busca</h3>
                     <input className="rounded w-full p-2" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
-                    {filteredMembers.map( member =>  
-                        <TwitchMember 
-                        member={member} 
-                        onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
-                        onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
-                    )}
+                    <table className="w-full">
+                        <tr className="text-white"> 
+                            <td>Username</td>
+                            <td>Kappa</td>
+                            <td></td>
+                            <td>Kappa Mês</td>
+                            <td></td>
+                            <td>First</td>
+                            <td></td>
+                            <td>Dívida Ju</td>
+                            <td></td>
+                        </tr>
+                        {filteredMembers.map( member =>  
+                            <TwitchMember 
+                            member={member} 
+                            onHandleAddKappa={() => handleKappa('add', 'kappa', member.username, 1)} 
+                            onHandleRemoveKappa={() => handleKappa('add', 'kappa', member.username, -1)} />
+                        )}
+                    </table>
                 </div>
             </div>
         </div>
