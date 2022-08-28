@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { TwitchMembers, LoginGabinete } from './Gabinete'
+import { GabineteRoutes, LoginGabinete, Sidebar, TwitchMembers } from './Gabinete';
+import { NextUIProvider } from '@nextui-org/react';
 
 export default function Dash(){
     const params = useParams()
@@ -23,9 +24,17 @@ export default function Dash(){
     }
     
     return(
-        <div className="bg-zinc-900 h-full p-4">
-            <TwitchMembers />
-            {console.log(users)}
-        </div>
+        <NextUIProvider>
+            <div className="flex flex-row bg-zinc-900 p-4">
+                <TwitchMembers />
+                {/* <aside className="w-1/4 h-screen">
+                    <Sidebar />
+                </aside> */}
+                {/* <div className="grow">
+                    <GabineteRoutes />
+                </div> */}
+                {console.log(users)}
+            </div>
+        </NextUIProvider>
     )
 }

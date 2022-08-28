@@ -15,7 +15,7 @@
 
 aside{
   width:250px;
-  height:500px
+  height:520px
 }
 
 .feras-fotinha{
@@ -45,7 +45,6 @@ aside{
 
 .team{ 
   background-color: #0e0e10;
-  min-height: 100vh;
 }
 
 .team-header{
@@ -82,7 +81,7 @@ a{
 }
 
 .preview{
-  height: 517px
+  height: 516px
 }
 
 .text-red>svg{

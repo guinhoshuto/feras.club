@@ -1,6 +1,7 @@
 import TwitchMember from './TwitchMember';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Input } from '@nextui-org/react';
 
 export default function TwitchMembers(){
     const [members, setMembers] = useState([]);
@@ -31,7 +32,7 @@ export default function TwitchMembers(){
     }
 
     return(
-        <div className="h-screen md:w-1/2 mx-auto">
+        <div className="md:w-2/3 mx-auto">
             <div className="w-full mx-auto">
                 <table className="w-full">
                     <tr className="text-white"> 
@@ -54,7 +55,7 @@ export default function TwitchMembers(){
                 </table>
                 <div className="mt-4 overflow-y-auto h-80">
                     <h3 className="text-white text-center">Busca</h3>
-                    <input className="rounded w-full p-2" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
+                    <Input placeholder="Buscar Usuário" className="rounded w-full p-2" type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
                     <table className="w-full">
                         <tr className="text-white"> 
                             <td>Username</td>

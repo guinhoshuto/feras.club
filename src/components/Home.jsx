@@ -38,13 +38,18 @@ export default function Home(){
     // console.log(fera)
 
     return(
-        <div className="team">
+        <div className="team h-screen">
             {/* {console.log(feras)} */}
             <Header />
                 (งツ)ว 
-            <div className="flex flex-row team-box sm:w-full md:w-full lg:w-1/2 mx-auto mt-4">
+            <div className="flex flex-row team-box sm:w-940 md:w-940 lg:w-940 mx-auto mt-4">
                 <div className="mx-auto container p-20px basis-1/3">
-                    <Feras feras={feras} />
+                    {/* <div className="mb-4">
+                        <img src={require('../feras.jpg')} alt="Clube das Feras" />
+                    </div> */}
+                    <div>
+                        <Feras feras={feras} />
+                    </div>
                 </div> 
                 <div className="basis-2/3 pr-4 py-4">
                     <Preview fera={fera}/>
