@@ -50,7 +50,7 @@ export default function Preview(){
                 </iframe>
                 <div className="p-4">
                     <div className="flex">
-                        <span className="text-white text-lg font-semibold">
+                        <span className="text-left text-white text-lg font-semibold">
                             {fera.title}
                         </span>
                     </div>
