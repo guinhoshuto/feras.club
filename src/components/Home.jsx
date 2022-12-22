@@ -9,9 +9,10 @@ export default function Home(){
 
 
     function getFerasOnline(){
-        axios.get("https://feras-leaderboards.herokuapp.com/team")
+        axios.get("https://api.feras.club/team/live")
         .then(ferasStreamers => {
-            const streamers = ferasStreamers.data.response;
+            const streamers = ferasStreamers.data;
+            console.log('streamers:', streamers)
             streamers.forEach(s => {
                 s.preview = true
             });
